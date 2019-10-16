@@ -5,12 +5,9 @@
 }
 .button 
 {
-    background-color: darkred;
-    color: white;
     min-width: 15%;
     min-height: 5%;
     font-size: 1.5vmin;
-    /* border-radius: 5px; */
 }
   
 .list:hover .button

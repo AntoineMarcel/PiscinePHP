@@ -3,7 +3,7 @@ body{
 }
 
 .center{
-	padding-top: 10px;
+	padding-top: 1%;
 	width: 90%;
 	margin: auto;
 	position: relative;
@@ -35,20 +35,19 @@ header img{
 	width: 21%;
 }
 
-.loupe{
-    height: auto;
+.header_right img{
+	max-width:100%;
+    height:auto;
 }
 
 .reload{
     float: right;
-    height: auto;
     margin-right: 2%;
     width: 5%;
 }
 
 .close{
     bottom: 20%;
-    height: auto;
     margin-right: 2%;
     position: absolute;
     right: 0;
@@ -122,7 +121,7 @@ header img{
 	height: 70px;
 }
 
-.boiteverte{
+.greenbox{
 	float: left;
 	width: 510px;
 	height: 170px;
@@ -134,7 +133,7 @@ header img{
 	font-family: Times;
 }
 
-.boiteverte p{
+.greenbox p{
    font-size: 21px;
     margin-bottom: 0;
     margin-top: 0;
