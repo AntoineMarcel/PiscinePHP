@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("div").click(function()
+                {
+                    $(this).css($(this).width() + 10 > 420 ? 
+                    {'width' : 200, 'height': 200} : 
+                    {'width' : $(this).width()  + 10, 'height': $(this).height() + 10});
+                    var couleur = $(this).css("background-color");
+                    if (couleur === 'rgb(255, 0, 0)')
+                        $(this).css('background-color',"green");
+                    else if (couleur === 'rgb(0, 128, 0)')
+                        $(this).css('background-color',"blue");
+                    else if (couleur === 'rgb(0, 0, 255)')
+                        $(this).css('background-color',"red");
+                });
+                $("div").mouseleave(function()
+                {
+                    if ($(this).width() >= 205)
+                        $(this).css({'width' : $(this).width()  - 5, 'height': $(this).height() - 5});
+                    var couleur = $(this).css("background-color");
+                    if (couleur === 'rgb(255, 0, 0)')
+                        $(this).css('background-color',"blue");
+                    else if (couleur === 'rgb(0, 128, 0)')
+                        $(this).css('background-color',"red");
+                    else if (couleur === 'rgb(0, 0, 255)')
+                        $(this).css('background-color',"green");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div style="width: 200px; height: 200px; background-color: red; border-radius: 100%"></div>
+    </body>
+</html>

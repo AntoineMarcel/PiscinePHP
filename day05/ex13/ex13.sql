@@ -1,0 +1,1 @@
+ SELECT ROUND(SUM(nb_seats) / COUNT(DISTINCT name_cinema)) AS average FROM cinema; 

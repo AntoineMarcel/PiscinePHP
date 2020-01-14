@@ -1,0 +1,58 @@
+<html>
+    <body>
+        <form onsubmit="return false;">
+            <input type="text" name="gauche" required>
+            <select name="operateur" required>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" name="droite" required>
+            <input onClick="placeOrder(this.form)" type="submit" name="envoyer" value="Try me!">
+
+        </form>
+
+        <script>
+        function placeOrder(x)
+        {
+            var gauche = parseInt(x.elements.gauche.value);
+            var operateur = x.elements.operateur.value;
+            var droite = parseInt(x.elements.droite.value);
+            var result = null;
+            if (gauche < 0 || droite < 0 || (isNaN(droite) || isNaN(gauche)))
+            {
+                alert("Error :(");
+                return;
+            }
+            if ((operateur == '/' || operateur == '%') && droite == 0)
+            {
+                alert("It's over 9000!");
+                window.console.log("It's over 9000!");
+                return;
+            }
+            if (operateur == '+')
+                result = gauche + droite;
+            else if (operateur == '-')
+                result = gauche - droite;
+            else if (operateur == '*')
+                result = gauche * droite;
+            else if (operateur == '/')
+                result = gauche / droite;
+            else if (operateur == '%')
+                result = gauche % droite;
+            if (result != null)
+            {
+                alert(result);
+                console.log(result);
+            }
+        }
+        function popUp(){
+            alert("Please, use me...");
+        }
+
+        setInterval(function(){popUp()}, 30000)
+        </script>
+    </body>
+</html>

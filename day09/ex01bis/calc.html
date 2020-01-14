@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                $("#formulaire").submit(function() {
+                    var droite = $("#droite").val();
+                    var gauche = $("#gauche").val();
+                    var operateur = $("#operateur").val();
+                    var result = null;
+                    if ($.isNumeric(droite) && $.isNumeric(gauche))
+                    {
+                        droite = parseInt(droite);
+                        gauche = parseInt(gauche);
+                        if (droite >= 0 && gauche >=0)
+                        {
+                            if ((operateur == '/' || operateur == '%') && droite == 0)
+                            {
+                                alert("It's over 9000!");
+                                console.log("It's over 9000!");
+                                return;
+                            }
+                            if (operateur == '+')
+                            result = gauche + droite;
+                            else if (operateur == '-')
+                                result = gauche - droite;
+                            else if (operateur == '*')
+                                result = gauche * droite;
+                            else if (operateur == '/')
+                                result = gauche / droite;
+                            else if (operateur == '%')
+                                result = gauche % droite;
+                            if (result != null)
+                            {
+                                alert(result);
+                                console.log(result);
+                            }
+                        }
+                        else
+                            alert("Error :(");
+                    }
+                    else
+                        alert("Error :(");
+                });            
+                
+            });
+
+            function popUp(){
+            alert("Please, use me...");
+            }
+
+             setInterval(function(){popUp()}, 30000)
+        </script>
+    </head>
+    <body>
+        <form id="formulaire" onsubmit="return false;">
+        <input type="text" id="gauche" required>
+        <select id="operateur" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="droite" required>
+        <input type="submit" name="envoyer" value="Try me!">
+        </form>
+    </body>
+</html>

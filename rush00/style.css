@@ -1,0 +1,19 @@
+.erreur {
+    color: red;
+    text-decoration: underline;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+
+.categorie
+{
+    color: blue;
+}
+
+span.article
+{
+    color: rgb(255, 51, 0);
+}

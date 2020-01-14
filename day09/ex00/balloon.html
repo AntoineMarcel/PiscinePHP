@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <div onmouseout="notonDiv(this)" onclick="zoom(this)" style="width: 200px; height: 200px; background-color: red; border-radius: 100%"></div>
+        <script>
+            function zoom(x) {
+                var taille = x.offsetWidth;
+                var backgroundcolor = x.style.backgroundColor;
+
+                x.style.width = taille + 10 + 'px';
+                x.style.height = taille + 10 + 'px';
+                if (taille + 10 > 420)
+                {
+                    x.style.width = '200px';
+                    x.style.height = '200px';                   
+                }
+                if (backgroundcolor == 'red')
+                    x.style.backgroundColor = 'green'
+                else if (backgroundcolor == 'green')
+                    x.style.backgroundColor = 'blue'
+                else if (backgroundcolor == 'blue')
+                    x.style.backgroundColor = 'red'
+            }
+
+            function notonDiv(x)
+            {
+                var taille = x.offsetWidth;
+                var backgroundcolor = x.style.backgroundColor;
+                if (taille >= 205)
+                {
+                    x.style.width = taille - 5 + 'px';
+                    x.style.height = taille - 5 + 'px';
+                }
+                if (backgroundcolor == 'red')
+                    x.style.backgroundColor = 'blue'
+                else if (backgroundcolor == 'blue')
+                    x.style.backgroundColor = 'green'
+                else if (backgroundcolor == 'green')
+                    x.style.backgroundColor = 'red'
+            }
+            </script>
+    </body>
+</html>
